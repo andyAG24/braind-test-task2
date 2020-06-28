@@ -1,22 +1,20 @@
 (function() {
 	function addToCartHanlder() {
-		$btns = $('[data-add-to-cart]');
-
+		let $btns = $('[data-add-to-cart]');
 		$btns.on('click', function(e){
 			e.preventDefault();
-			
 			$.ajax({
 				url: './fakedata/cartResponse.json',
 				type: 'GET',
-				dataType: 'html',
+				dataType: 'json',
 				success: (res) => {
-					if (res.succes) {
-						$btns
+					if (res.success) {
+						$(e.target)
 							.text('Добавлено')
 							.removeClass('btn-primary')
 							.addClass('btn-success');
-							
-						$('[data-cart-count]').text(res.count);
+						let currentCount = res.count + 1;
+						$('[data-cart-count]').text(currentCount);
 					}
 				}
 			});

@@ -57,7 +57,7 @@ gulp.task('build', [
   'jade',
   'sass',
   'browserify',
-  'concatLegacyScripts'
+  // 'concatLegacyScripts'
 ]);
 
 // Server tasks with watch

@@ -1,1 +1,13 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
+
+.cart-icon {
+    & > .img-fluid {
+        height: 25px;
+    }
+
+    & > .cart-icon__counter {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        transform: translate(-8px, -8px);
+    }
+}
